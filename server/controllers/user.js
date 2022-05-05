@@ -96,14 +96,10 @@ exports.forgotPassword = (req, res) => {
 
     // NODEMAILER TRANSPORT FOR SENDING POST NOTIFICATION VIA EMAIL
     const transporter = nodemailer.createTransport({
-        host: HOST,
-        port: PORT,
+        service: 'gmail',
         auth: {
-            user: USER,
-            pass: PASS
-        },
-        tls: {
-            rejectUnauthorized: false
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
         }
     })
 
