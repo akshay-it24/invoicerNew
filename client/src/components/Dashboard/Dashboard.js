@@ -94,7 +94,7 @@ const Dashboard = () => {
                 <ul className={styles.autoGrid}>
                     <li className={styles.listItem} style={{ backgroundColor: '#1976d2', color: 'white' }}>
                         <div>
-                            <p>{toCommas(totalPaid)}</p>
+                            <p>{toCommas(totalPaid.toFixed(2))}</p>
                             <h2 style={{ color: 'white' }}>Payment Received</h2>
                         </div>
                         <div>
@@ -104,7 +104,7 @@ const Dashboard = () => {
 
                     <li className={styles.listItem} >
                         <div>
-                            <p>{toCommas(totalAmount.toFixed(2) - totalPaid.toFixed(2))}</p>
+                            <p>{toCommas((totalAmount - totalPaid).toFixed(2))}</p>
                             <h2>Pending Amount</h2>
                         </div>
                         <div>
